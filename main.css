@@ -1,0 +1,149 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f1ea;
+  --panel: rgba(255, 255, 255, 0.78);
+  --panel-border: rgba(19, 39, 29, 0.08);
+  --text: #171717;
+  --button: #25d366;
+  --button-hover: #20bd5a;
+  --button-shadow: rgba(37, 211, 102, 0.28);
+  --icon-green: #128c7e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.88), transparent 38%),
+    radial-gradient(circle at bottom right, rgba(37, 211, 102, 0.09), transparent 34%),
+    linear-gradient(145deg, var(--bg), #faf8f3 52%, #ece7dd);
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.panel {
+  width: min(100%, 760px);
+  padding: 56px 40px 42px;
+  border: 1px solid var(--panel-border);
+  border-radius: 36px;
+  background: var(--panel);
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 28px 80px rgba(24, 28, 23, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.8rem, 4.2vw, 2.7rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.whatsapp-button {
+  margin: 30px auto 0;
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 22px 12px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(18, 140, 126, 0.12);
+  background: var(--button);
+  color: #fff;
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+  box-shadow:
+    0 16px 34px var(--button-shadow),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-2px);
+  background: var(--button-hover);
+  box-shadow:
+    0 20px 40px rgba(37, 211, 102, 0.34),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-button:focus-visible {
+  outline: 3px solid rgba(37, 211, 102, 0.28);
+  outline-offset: 5px;
+}
+
+.button-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--icon-green);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.button-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+@media (max-width: 640px) {
+  .panel {
+    padding: 36px 16px 28px;
+    border-radius: 28px;
+  }
+
+  h1 {
+    font-size: clamp(1.2rem, 5.9vw, 1.8rem);
+    letter-spacing: -0.02em;
+  }
+
+  .whatsapp-button {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 14px 10px 12px;
+    font-size: 0.84rem;
+    letter-spacing: -0.01em;
+  }
+
+  .button-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .button-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+}
